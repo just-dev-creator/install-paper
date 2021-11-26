@@ -49,7 +49,7 @@ async function dowload_jar(url, version, build, path) {
     try {
         const path = core.getInput('path');
         var version = core.getInput('version');
-        const build = core.getInput('build_number');
+        var build = core.getInput('build_number');
         // var version = 'latest';
         // var build = 'latest';
         const url = 'https://papermc.io/api/v2/projects/paper';
