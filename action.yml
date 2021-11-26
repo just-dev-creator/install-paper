@@ -1,0 +1,18 @@
+name: 'Download PaperMC'
+author: 'Justus'
+description: 'Downloads the specified PaperMC version using their api.'
+inputs:
+  version:
+    description: 'The specific version to download, or \'latest\''
+    required: false
+    default: 'latest'
+  build_number:
+    description: 'The specific build to download, or \'latest\''
+    required: false
+    default: 'latest'
+  path:
+    description: 'Where to download the jar file to.'
+    required: true
+runs:
+  using: 'node12'
+  main: 'index.js'
