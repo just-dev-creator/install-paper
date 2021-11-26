@@ -11,3 +11,10 @@ jobs:
           path: './paper.jar'
       - name: Check if file exists
         run: file paper.jar
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: '16'
+      - name: Start program
+        run: "java -jar paper.jar"
+        timeout-minutes: 2 
