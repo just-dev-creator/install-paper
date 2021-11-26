@@ -15,7 +15,7 @@ Defaults to "latest".
 ### `path`
 **Required** Where to save the downloaded build. 
 
-## Example suage
+## Example usage
 
 ```yml
 uses: just-dev-creator/install-paper
