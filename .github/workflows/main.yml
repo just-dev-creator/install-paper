@@ -1,0 +1,13 @@
+on: [push]
+
+jobs:
+  install_paper:
+    runs-on: ubuntu-latest
+    name: Download PaperMC
+    steps:
+      - name: Download using own action
+        uses: just-dev-creator/install-paper@master
+        with:
+          path: './paper.jar'
+      - name: Check if file exists
+        run: file paper.jar
