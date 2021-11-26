@@ -1,8 +1,9 @@
 name: 'Download PaperMC'
 author: 'Justus'
 description: 'Downloads the specified PaperMC version using their api.'
-icon: 'download'
-color: 'gray-dark'
+branding:
+  icon: 'download'
+  color: 'gray-dark'
 inputs:
   version:
     description: 'The specific version to download, or latest'
