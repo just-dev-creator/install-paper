@@ -3,11 +3,11 @@ author: 'Justus'
 description: 'Downloads the specified PaperMC version using their api.'
 inputs:
   version:
-    description: 'The specific version to download, or \'latest\''
+    description: 'The specific version to download, or latest'
     required: false
     default: 'latest'
   build_number:
-    description: 'The specific build to download, or \'latest\''
+    description: 'The specific build to download, or latest'
     required: false
     default: 'latest'
   path:
