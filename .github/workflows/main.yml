@@ -51,7 +51,7 @@ jobs:
       - uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: '16'
+          java-version: '12'
       - name: Start program
         run: "java -jar paper.jar"
         timeout-minutes: 2
