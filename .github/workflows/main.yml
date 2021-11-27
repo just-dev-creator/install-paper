@@ -1,9 +1,9 @@
-on: [push]
+on: [push, pull_request]
 name: Test action
 jobs:
-  install_paper:
+  latest:
     runs-on: ubuntu-latest
-    name: Download PaperMC
+    name: Download latest PaperMC
     steps:
       - name: Download using own action
         uses: just-dev-creator/install-paper@master
@@ -17,4 +17,41 @@ jobs:
           java-version: '16'
       - name: Start program
         run: "java -jar paper.jar"
-        timeout-minutes: 2 
+        timeout-minutes: 2
+  specific_version:
+    runs-on: ubuntu-latest
+    name: Download latest PaperMC 1.16.5 build
+    steps:
+      - name: Download using own action
+        uses: just-dev-creator/install-paper@master
+        with:
+          path: './paper.jar'
+          version: '1.16.5'
+      - name: Check if file exists
+        run: file paper.jar
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: '16'
+      - name: Start program
+        run: "java -jar paper.jar"
+        timeout-minutes: 2
+    specific_version_build:
+      runs-on: ubuntu-latest
+      name: Download specific PaperMC
+      steps:
+        - name: Download using own action
+          uses: just-dev-creator/install-paper@master
+          with:
+            path: './paper.jar'
+            version: '1.14.4'
+            build_numbeR: '187'
+        - name: Check if file exists
+          run: file paper.jar
+        - uses: actions/setup-java@v2
+          with:
+            distribution: 'zulu'
+            java-version: '16'
+        - name: Start program
+          run: "java -jar paper.jar"
+          timeout-minutes: 2
